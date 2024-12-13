@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #182e9a;
+    margin-bottom: 20px;
+}
+
+.galeria {
+    display: grid;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Responsividade */
+@media (min-width: 1200px) {
+    .galeria {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 800px) and (max-width: 1199px) {
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 799px) {
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilo das Imagens */
+picture img {
+    width: 100%;
+    height: auto;
+    border: 5px solid rgba(255, 0, 0, 0.8);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito Hover Mágico */
+picture img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px 5px rgba(255, 0, 0, 0.8);
+}
